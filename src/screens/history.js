@@ -11,6 +11,12 @@ const styles = {
 }
 
 class History extends Component {
+  clearHistory() {
+    this.props.dispatch({
+      type: "FACT/CLEAR_HISTORY",
+    })
+  }
+
   render() {
     return (
       <div align= 'center'>
@@ -22,13 +28,14 @@ class History extends Component {
         >
           {this.props.log.map((item,i) => {
             return (
-              <div>{'Input: '+item[0]+' -> Response'}</div>
+              <div>{'Input: '+item[0]+' -> Response: '+item[1]}</div>
             )
           })}
         </div>
         <PushToPageButton {...this.props} pageName= "menu" btnName= "Back" />
         <button
         style = {styles.buttonStyle}
+        onClick={() => this.clearHistory()}
         >
         Clear
         </button>

@@ -11,18 +11,14 @@ export default function reducer(state = initialState.factorial, action) {
     case "FACT/SUBMIT":
       return {
         ...state,
+        factInput: state.factInput,
         factOutput: (factorial(state.factInput)),
-      }
-    case "FACT/CLEAR":
-      return {
-        ...state,
-        factOutput: '',
       }
     case "FACT/LOG_ITEM":
       var newLog = state.log.slice();
       newLog.push([
         action.input,
-        action.output,
+        (factorial(state.factInput)),
       ]);
       return {
         ...state,

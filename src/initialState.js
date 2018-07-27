@@ -1,7 +1,7 @@
 const initialState = {
   factorial: {
   	factInput: 1,
-  	factOutput: '',
+  	factOutput: 1,
     log: [],
   },
 }

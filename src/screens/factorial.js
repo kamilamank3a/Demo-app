@@ -34,7 +34,6 @@ class Factorial extends Component {
     this.props.dispatch({
       type: "FACT/LOG_ITEM",
       input: this.props.factInput,
-      output: this.props.factOutput,
     })
 	}
 
